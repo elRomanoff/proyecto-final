@@ -13,6 +13,14 @@ class FireContainer {
             databaseURL: this.url
         });
     }
+        async save(product){
+        const data = this.db.ref("products").push(product);
+        return data
+    }
+    async getAll(){
+        const data = this.db.ref("products")
+        return data;
+    }
 } 
 
 module.exports = FireContainer
