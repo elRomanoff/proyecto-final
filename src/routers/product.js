@@ -2,6 +2,7 @@ const express = require('express');
 const productRouter = express.Router();
 const ProductDaoMongo = require("../daos/ProductDaoMongo.js")
 const isAdmin = require('../middlewares/isAdmin.js')
+const ProductDaoFire = require("../containers/FireContainer.js")
 
 const productDaoMongo = new ProductDaoMongo
 
