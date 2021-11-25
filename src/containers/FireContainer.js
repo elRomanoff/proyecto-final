@@ -18,7 +18,9 @@ class FireContainer {
         return data
     }
     async getAll(){
-        const data = this.db.ref("products")
+        const data = this.db.ref("products").once("value", (snapshot) =>{
+            return snapshot.val()
+        })
         return data;
     }
 } 
